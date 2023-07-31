@@ -13,8 +13,12 @@ edition = "2021"
 maintenance = { status = "as-is" }
 
 [dependencies]
+async-trait = "0.1.72"
 diesel = { version = "2.1", features = [
     "r2d2",
     "i-implement-a-third-party-backend-and-opt-into-breaking-changes",
 ] }
+diesel-async = { version = "0.3.2", features = [ "postgres", "mobc"] }
 log = "0.4.18"
+tokio = { version = "1.0", features = ["full"] }
+futures-util = { version = "0.3.17", default-features = false, features = ["std", "sink"] }
